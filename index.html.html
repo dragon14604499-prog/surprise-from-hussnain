@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mrasanyyyyy 🎂</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:22px;overflow-x:hidden;display:grid;place-items:center;font-family:"Trebuchet MS",Arial,sans-serif;color:#fff;background:linear-gradient(135deg,#ff758c,#ff7eb3,#a18cd1)}
+.orb{position:fixed;width:260px;height:260px;border-radius:50%;background:#fff2;filter:blur(4px)}.one{top:-90px;left:-70px}.two{bottom:-100px;right:-70px}
+.page{width:min(650px,100%);text-align:center;position:relative}.card,.wishCard{border:1px solid #ffffff99;border-radius:28px;background:#ffffff25;backdrop-filter:blur(12px);padding:clamp(27px,6vw,45px) 25px;box-shadow:0 20px 60px #5d174533}
+.card{cursor:pointer;transition:transform .25s}.card:hover{transform:translateY(-5px) rotate(-.5deg)}.envelope{font-size:82px;animation:bob 2s ease-in-out infinite}
+h1{font-size:clamp(2rem,8vw,3.8rem);margin:10px 0;line-height:1.1}.bigBirthday{font-size:clamp(2rem,7.5vw,4.2rem);overflow-wrap:anywhere;text-shadow:0 5px 20px #8a235766}.yellow{color:#fff3ad}.hint{font-size:1.05rem;line-height:1.7}
+button{border:0;border-radius:999px;padding:13px 22px;margin:8px 4px 0;font-size:1rem;font-weight:bold;color:#d94d89;background:white;cursor:pointer;box-shadow:0 8px 22px #6e174b33}
+#wishesPage{display:none;animation:appear .65s ease both}#cakePage{display:none;animation:appear .65s ease both}.cake{font-size:62px}.cakeScene{position:relative;margin:24px auto 18px;max-width:390px;min-height:235px;display:grid;place-items:center}.cakeArt{font-size:125px;filter:drop-shadow(0 12px 12px #7b174533);transition:transform .5s}.cakeArt.cut{transform:rotate(-9deg) scale(.82);filter:drop-shadow(0 0 18px #fff6a8)}.knife{font-size:48px;position:absolute;right:22%;top:12%;transform:rotate(-35deg);opacity:0;transition:all .45s}.knife.cut{opacity:1;right:34%;top:43%;transform:rotate(35deg)}.cutMessage{display:none;font-size:clamp(1.5rem,6vw,2.7rem);font-weight:900;line-height:1.25;color:#fff3ad;text-shadow:0 4px 18px #8a235766;overflow-wrap:anywhere}.cutMessage.show{display:block;animation:appear .65s ease both}.funny{font-size:1.06rem;line-height:1.8;text-align:left;margin:22px auto;max-width:510px}.funny p{margin:13px 0}.footer{margin-top:20px;opacity:.9}
+.confetti{position:fixed;top:-25px;pointer-events:none;animation:fall linear forwards;z-index:5}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}@keyframes appear{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.15}}
+</style>
+</head>
+<body>
+<div class="orb one"></div><div class="orb two"></div>
+<main class="page">
+<section id="frontPage">
+<div class="card" role="button" tabindex="0" onclick="openWishes()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openWishes();}">
+<div class="envelope">💌</div><p class="hint">Breaking News 🚨: Someone is getting older!</p>
+<h1>Open This,<br><span class="yellow" id="frontName">Bestie</span> 😂</h1>
+<p class="hint">Warning: Contains 100% bakwaas and 0% maturity.</p>
+<button type="button" onclick="event.stopPropagation();openWishes()">😂 Open at Your Own Risk</button>
+</div>
+<p class="footer">Sent with love, drama & free ki advice by Hussnain ❤️</p>
+</section>
+<section id="wishesPage">
+<div class="wishCard">
+<div class="cake">🎂🤣🎈</div>
+<h1 class="bigBirthday">HAPPY BIRTHDAY<br>MRASANYYYYY🥳</h1>
+<div class="funny">
+<p>🚨 Congratulations! You're now one year older, but don't worry… your brain is still running on the free trial. 😂</p>
+<p>🎂 Eat as much cake as you want today. Tomorrow your weighing scale will start giving you emotional damage. 🤣</p>
+<p>📱 May you find a loyal partner… who replies faster than your internet and laughs at your jokes even when they're not funny. 😭😂</p>
+<p>"You're another year older, not any wiser, and still making bad decisions with me.🤫"</p>
+<p>Well done – you have still been alive for several years.😎</p>
+<p>“I’m waiting for you to make some time because I’m really craving biryani.” 😂❤️</p>
+<p>❤️ Okay, jokes aside: I'm wishing you a year full of happiness, success, good health, and amazing memories. You deserve all the best!</p>
+<p style="text-align:center;font-size:1.15rem"><strong>Ab next page par cake cut karna hai! 🎂🔪</strong></p>
+</div>
+<button onclick="celebrate()">🎉 More Chaos!</button><button onclick="goCake()">🎂 Next Page: Cut Cake</button><button onclick="goBack()" style="background:#ffffff35;color:white">↩ Back</button>
+<div class="footer">With love, unlimited roasting & zero refunds 😂<br><strong>— Hussnain ❤️</strong></div>
+</div>
+</section>
+<section id="cakePage">
+  <div class="wishCard">
+    <div class="cake">🎂🔪✨</div>
+    <h1 class="bigBirthday">CAKE CUTTING TIME! 🎂</h1>
+    <p class="hint">Ready? Tap the button and cut your birthday cake! 💖</p>
+    <div class="cakeScene">
+      <div class="cakeArt" id="cakeArt">🎂</div>
+      <div class="knife" id="knife">🔪</div>
+    </div>
+    <div class="cutMessage" id="cutMessage">HAPPY BIRTHDAY<br>FROM YOUR BESTU ❤️🥹</div>
+    <button id="cutButton" onclick="cutCake()">🔪 Cut the Cake!</button>
+    <button onclick="goWishes()" style="background:#ffffff35;color:white">↩ Back to Wishes</button>
+    <div class="footer">A special cake-cutting surprise, just for you! 💕</div>
+  </div>
+</section>
+</main>
+<script>
+const friendName="Bestie"; // Replace "Bestie" with your friend's name if you want
+document.getElementById("frontName").textContent=friendName;
+document.getElementById("wishName").textContent=friendName;
+function openWishes(){document.getElementById("frontPage").style.display="none";document.getElementById("wishesPage").style.display="block";window.scrollTo({top:0,behavior:"smooth"});celebrate()}
+function goBack(){document.getElementById("wishesPage").style.display="none";document.getElementById("cakePage").style.display="none";document.getElementById("frontPage").style.display="block";window.scrollTo({top:0,behavior:"smooth"})}
+function goCake(){document.getElementById("wishesPage").style.display="none";document.getElementById("cakePage").style.display="block";window.scrollTo({top:0,behavior:"smooth"});celebrate()}
+function goWishes(){document.getElementById("cakePage").style.display="none";document.getElementById("wishesPage").style.display="block";window.scrollTo({top:0,behavior:"smooth"})}
+function cutCake(){
+  document.getElementById("cakeArt").classList.add("cut");
+  document.getElementById("knife").classList.add("cut");
+  document.getElementById("cutMessage").classList.add("show");
+  document.getElementById("cutButton").textContent="🎉 Cake Cut Ho Gaya!";
+  document.getElementById("cutButton").disabled=true;
+  celebrate();
+}
+function celebrate(){for(let i=0;i<65;i++){const item=document.createElement("div");item.className="confetti";item.textContent=["💖","🎉","✨","🎊","💕","🌸","😂","🤣"][Math.floor(Math.random()*8)];item.style.left=Math.random()*100+"vw";item.style.animationDuration=(2+Math.random()*3)+"s";item.style.fontSize=(15+Math.random()*18)+"px";document.body.appendChild(item);setTimeout(()=>item.remove(),5200)}}
+</script>
+</body>
+</html>
